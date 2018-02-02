@@ -104,12 +104,14 @@ Sub tickers()
             End If
         Next u
         total_volume = 0
+
         For y = 2 To Range("N65000").End(xlUp).Row
             If Cells(y + 1, 10).Value > total_volume Then
                total_volume = Cells(y + 1, 10).Value
                greatest = Cells(y + 1, 9).Value
             End If
         Next y
+        
         Range("Q4").Value = greatest
         Range("R4").Value = total_volume
         Range("Q1").Value = "Ticker"
