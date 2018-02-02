@@ -1,13 +1,11 @@
 # import dependencies
-
 import pandas as pd
 
-# set file path
+# set variable to first raw CSV file path
 file1 = "/Users/marksquier/desktop/learnpython/hw_resources/budget_data_1.csv"
 
-# convert csv to data frame
+# convert CSV to data frame
 df1 = pd.read_csv(file1)
-df1.head()
 
 # return total months
 total_months = len(df1["Date"].unique())
@@ -36,9 +34,8 @@ rev_dec = df1["Diff"].min()
 dec_row = df1["Diff"].idxmin()
 date_dec = df1.loc[dec_row, "Date"]
 
-# print analysis to terminal
+# print first analysis to terminal
 print()
-print('-------------------------------------------------------------------------')
 print('Financial Analysis 1')
 print('--------------------------------')
 print('Total months: ' + str(total_months))
@@ -58,12 +55,12 @@ summary1 = pd.DataFrame({'Total months': int(total_months),
     
 })
 
-#################################################################################################
 
+# set variable to second raw CSV file path
 file2 = "/Users/marksquier/desktop/learnpython/hw_resources/budget_data_2.csv"
 
+# convert CSV to data frame
 df2 = pd.read_csv(file2)
-df2.head()
 
 # return total months
 total_months2 = len(df2["Date"].unique())
@@ -92,6 +89,7 @@ rev_dec2 = df2["Diff"].min()
 dec_row2 = df2["Diff"].idxmin()
 date_dec2 = df2.loc[dec_row, "Date"]
 
+# print second analysis to terminal
 print()
 print('Financial Analysis 2')
 print('--------------------------------')
@@ -107,18 +105,16 @@ summary2 = pd.DataFrame({'Total months': int(total_months2),
                         'Average revenue change': int(average_change2),
                         'Greatest increase in revenue': [str(date_inc2) + ' $' + str(rev_inc2)],
                         'Greatest decrease in revenue': [str(date_dec2) + ' $' + str(rev_dec2)]
-                        
-    
 })
 
 # merge both report summaries
 combined_df = pd.merge(summary1, summary2, 
 						how = 'outer')
 
+# print combined summary to terminal
 print()
 print('Combined reports:')
 print(combined_df)
 
 # export merged summary to CSV
 combined_df.to_csv("/Output/Combined Financial Analysis.csv", encoding='UTF-8', index=False, header=True)
-
