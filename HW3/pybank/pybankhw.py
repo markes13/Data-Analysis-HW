@@ -16,6 +16,7 @@ total_months = len(df1["Date"].unique())
 total_revenue = df1["Revenue"].sum()
 
 # return average change (b/w months)
+# NOTE: data frame is already organized in chronological order
 average_change = round(((df1.loc[40, "Revenue"] - df1.loc[0, "Revenue"])/len(df1)), 2)
 
 # create new column with rev diff b/w months
@@ -35,6 +36,7 @@ rev_dec = df1["Diff"].min()
 dec_row = df1["Diff"].idxmin()
 date_dec = df1.loc[dec_row, "Date"]
 
+# print analysis to terminal
 print()
 print('-------------------------------------------------------------------------')
 print('Financial Analysis 1')
@@ -45,6 +47,8 @@ print('Average revenue change: $' + str(average_change))
 print('Greatest increase in revenue: ' + str(date_inc) + ' $' + str(rev_inc))
 print('Greatest decrease in revenue: ' + str(date_dec) + ' $' + str(rev_dec))
 
+
+# create new data frame with summary of first report
 summary1 = pd.DataFrame({'Total months': int(total_months),
                         'Total revenue': int(total_revenue),
                         'Average revenue change': int(average_change),
@@ -97,6 +101,7 @@ print('Average revenue change: $' + str(average_change2))
 print('Greatest increase in revenue: ' + str(date_inc2) + ' $' + str(rev_inc2))
 print('Greatest decrease in revenue: ' + str(date_dec2) + ' $' + str(rev_dec2))
 
+# create new data frame with summary of second report
 summary2 = pd.DataFrame({'Total months': int(total_months2),
                         'Total revenue': int(total_revenue2),
                         'Average revenue change': int(average_change2),
@@ -106,6 +111,7 @@ summary2 = pd.DataFrame({'Total months': int(total_months2),
     
 })
 
+# merge both report summaries
 combined_df = pd.merge(summary1, summary2, 
 						how = 'outer')
 
@@ -113,5 +119,6 @@ print()
 print('Combined reports:')
 print(combined_df)
 
+# export merged summary to CSV
 combined_df.to_csv("/Output/Combined Financial Analysis.csv", encoding='UTF-8', index=False, header=True)
 
