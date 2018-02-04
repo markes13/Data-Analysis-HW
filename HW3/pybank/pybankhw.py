@@ -15,7 +15,7 @@ total_revenue = df1["Revenue"].sum()
 
 # return average change (b/w months)
 # NOTE: data frame is already organized in chronological order
-average_change = round(((df1.loc[40, "Revenue"] - df1.loc[0, "Revenue"])/len(df1)), 2)
+average_change = round(((df1.loc[(total_months - 1), "Revenue"] - df1.loc[0, "Revenue"])/len(df1)), 2)
 
 # create new column with rev diff b/w months
 df1["Diff"] = df1["Revenue"] - df1["Revenue"].shift(1)
