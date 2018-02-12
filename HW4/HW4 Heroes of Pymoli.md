@@ -100,8 +100,8 @@ df.head()
 
 ```python
 # Player Count
-# determine total number of players
 
+# determine total number of players
 total_players = len(df["SN"].unique())
 total_players
 ```
@@ -228,7 +228,22 @@ child_normalized = round(child_purchase_tot/child_count, 2)
 young_adult_normalized = round(young_adult_purchase_tot/young_adult_count, 2)
 adult_normalized = round(adult_purchase_tot/adult_count, 2)
 parent_normalized = round(parent_purchase_tot/parent_count, 2)
+
+age_group = df.groupby("Age Category")
+age_group["SN"].count()
 ```
+
+
+
+
+    Age Category
+    Child          150
+    Young Adult    462
+    Adult          121
+    Parent          47
+    Name: SN, dtype: int64
+
+
 
 
 ```python
