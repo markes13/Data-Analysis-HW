@@ -2,7 +2,7 @@
 import pandas as pd
 
 # set csv path
-csv_path = "/Users/marksquier/desktop/election_data_1.csv"
+csv_path = os.path.join("raw_data", "election_data_1.csv")
 
 # convert csv to data frame
 poll_df = pd.read_csv(csv_path)
@@ -59,7 +59,7 @@ print()
 # REPEAT FOR SECOND DATA SET
 
 # set csv path
-csv_path = "/Users/marksquier/desktop/election_data_2.csv"
+csv_path = os.path.join("raw_data", "election_data_2.csv")
 
 # convert csv to data frame
 poll_df = pd.read_csv(csv_path)

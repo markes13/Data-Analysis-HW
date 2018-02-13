@@ -1,8 +1,9 @@
 # import dependencies
 import pandas as pd
+import os
 
 # set variable to first raw CSV file path
-file1 = "/Users/marksquier/desktop/learnpython/hw_resources/budget_data_1.csv"
+file1 = os.path.join("Raw Data", "budget_data_1.csv")
 
 # convert CSV to data frame
 bank_df = pd.read_csv(file1)
@@ -61,7 +62,7 @@ summary.to_csv("/Output/First Financial Analysis.csv", encoding='UTF-8', index=F
 # REPEAT FOR SECOND DATA SET
 
 # set variable to second raw CSV file path
-file = "/Users/marksquier/desktop/learnpython/hw_resources/budget_data_2.csv"
+file = os.path.join("Raw Data", "budget_data_2.csv")
 
 # convert CSV to data frame
 bank_df = pd.read_csv(file)
