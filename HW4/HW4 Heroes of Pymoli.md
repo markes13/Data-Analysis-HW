@@ -3,11 +3,12 @@
 ```python
 import pandas as pd
 import numpy as np
+import os
 ```
 
 
 ```python
-json_path = ("/Users/marksquier/desktop/learnpython/jupyter hw/HeroesOfPymoli/purchase_data.json")
+json_path = os.path.join("Resources", "purchase_data.json")
 ```
 
 
