@@ -16,13 +16,83 @@ ride_path = 'raw_data/ride_data.csv'
 # Read CSVs into data frames
 city_df = pd.read_csv(city_path)
 ride_df = pd.read_csv(ride_path)
+ride_df.head()
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>city</th>
+      <th>date</th>
+      <th>fare</th>
+      <th>ride_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sarabury</td>
+      <td>2016-01-16 13:49:27</td>
+      <td>38.35</td>
+      <td>5403689035038</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>South Roy</td>
+      <td>2016-01-02 18:42:34</td>
+      <td>17.49</td>
+      <td>4036272335942</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Wiseborough</td>
+      <td>2016-01-21 17:35:29</td>
+      <td>44.18</td>
+      <td>3645042422587</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Spencertown</td>
+      <td>2016-07-31 14:53:22</td>
+      <td>6.87</td>
+      <td>2242596575892</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Nguyenbury</td>
+      <td>2016-07-09 04:42:44</td>
+      <td>6.28</td>
+      <td>1543057793673</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
 ```python
 # Average fare per city
 rides_group = ride_df.groupby("city", as_index=False)
-avg_fare_city = round(rides_group["fare"].mean(), 2)
+avg_fare_city = rides_group["fare"].mean()
 
 # Total number of rides per city
 tot_rides_city = rides_group.count()
