@@ -51,7 +51,11 @@ plot_df2 = pd.merge(drivers_per_city, city_type, how='outer')
 plot_df = pd.merge(plot_df1, plot_df2, how='outer', on='city')
 
 # rename column
-plot_df = plot_df.rename(columns={"type": "City Type"})
+plot_df = plot_df.rename(columns={"type": "City Type", 
+                                  "city":"City",
+                                  "fare":"Fare",
+                                  "driver_count": "Count of Drivers",
+})
 
 plot_df.head()
 ```
@@ -77,10 +81,10 @@ plot_df.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>city</th>
-      <th>fare</th>
+      <th>City</th>
+      <th>Fare</th>
       <th>Count of Rides</th>
-      <th>driver_count</th>
+      <th>Count of Drivers</th>
       <th>City Type</th>
     </tr>
   </thead>
@@ -148,9 +152,9 @@ rural_df = plot_df.loc[plot_df["City Type"]=='Rural', :]
 
 ```python
 fig, ax = plt.subplots()
-plt.scatter(x=urban_df['Count of Rides'], y=urban_df['fare'], c='gold', alpha=0.75, s=urban_df['driver_count'],label='Urban', linewidths=2)
-plt.scatter(x=rural_df['Count of Rides'], y=rural_df['fare'], c='lightskyblue', alpha=1, s=rural_df['driver_count'], label='Rural')
-plt.scatter(x=suburban_df['Count of Rides'], y=suburban_df['fare'], c='lightcoral', alpha=1, s=suburban_df['driver_count'], label='Suburban')
+plt.scatter(x=urban_df['Count of Rides'], y=urban_df['Fare'], c='gold', alpha=0.75, s=urban_df['Count of Drivers'],label='Urban', linewidths=2)
+plt.scatter(x=rural_df['Count of Rides'], y=rural_df['Fare'], c='lightskyblue', alpha=1, s=rural_df['Count of Drivers'], label='Rural')
+plt.scatter(x=suburban_df['Count of Rides'], y=suburban_df['Fare'], c='lightcoral', alpha=1, s=suburban_df['Count of Drivers'], label='Suburban')
 plt.legend(loc='best')
 plt.xlabel("Total Rides per City")
 plt.ylabel("Average Fare per City")
@@ -190,7 +194,7 @@ plt.show()
 # % of Fare by City Type
 
 labels = ['Urban', 'Rural', 'Suburban']
-sizes = [urban_df["fare"].sum(), rural_df["fare"].sum(), suburban_df["fare"].sum()]
+sizes = [urban_df["Fare"].sum(), rural_df["Fare"].sum(), suburban_df["Fare"].sum()]
 colors = ['gold', 'lightskyblue', 'lightcoral']
 explode = [0.1, 0.1, 0.1]
 plt.pie(sizes, explode=explode, labels=labels, colors=colors,
@@ -208,7 +212,7 @@ plt.show()
 # % of Fare by City Type
 
 labels = ['Urban', 'Rural', 'Suburban']
-sizes = [urban_df["driver_count"].sum(), rural_df["driver_count"].sum(), suburban_df["driver_count"].sum()]
+sizes = [urban_df["Count of Drivers"].sum(), rural_df["Count of Drivers"].sum(), suburban_df["Count of Drivers"].sum()]
 colors = ['gold', 'lightskyblue', 'lightcoral']
 explode = [0.1, 0.1, 0.1]
 plt.pie(sizes, explode=explode, labels=labels, colors=colors,
