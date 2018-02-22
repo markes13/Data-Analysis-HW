@@ -279,7 +279,7 @@ plt.show()
 
 
 ```python
-# % of Fare by City Type
+# % of Drivers by City Type
 
 labels = ['Urban', 'Rural', 'Suburban']
 sizes = [urban_df["Count of Drivers"].sum(), rural_df["Count of Drivers"].sum(), suburban_df["Count of Drivers"].sum()]
