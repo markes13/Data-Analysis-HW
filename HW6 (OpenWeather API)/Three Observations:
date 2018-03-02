@@ -1,4 +1,4 @@
 Three Observations:
 	1. It's obvious that temperature increases as you get closer to the equator. What's less obvious is that the vast majority of people live between -40 and 60 degrees latitude, as seen in the scatter distribution.
 	2. There seems to be more cloud cover at 0 latitude. It is one of the few ranges in which every city registers at least some cloud cover. Alternatively, latitude range 20-60 seems to be the sunniest range on average at the time of analysis.
-	3. As expected, humidity generally correlates to latitude. The lowest humidity registered at 0 latitude is roughly 50%. Humidity drops off in both directions for 0 latitude, although there are many exceptions. Humidity is more difficult to predict with latitude.
+	3. As expected, humidity somewhat correlates to latitude. The lowest humidity registered at 0 latitude is roughly 50%. Humidity drops off in both directions from 0 latitude, although there are many exceptions. In general, humidity is more difficult to predict with latitude.
