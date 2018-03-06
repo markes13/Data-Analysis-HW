@@ -12,7 +12,7 @@ today = now.strftime("%Y-%m-%d %H:%M")
 print(today)
 
 # openweather api key
-api_key = "7a208847c94ef1bbc677aa655728777e"
+api_key = "xxxxxxxxxxxxxxxxxxxxxx"
 url = "http://api.openweathermap.org/data/2.5/box/city?"
 
 # create empty list
