@@ -95,7 +95,7 @@ today
 
 
 
-    '2018-03-08 14:06'
+    '2018-03-08 14:16'
 
 
 
@@ -133,7 +133,95 @@ tweets_df["Neutral Score"] = neu_list
 tweets_df["Negative Score"] = neg_list 
 tweets_df["Compound Score"] = compound_list
 tweets_df.to_csv('tweets_df.csv', encoding='utf-8')
+tweets_df.head()
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Media Outlet</th>
+      <th>Positive Score</th>
+      <th>Tweet Text</th>
+      <th>Compound Score</th>
+      <th>Negative Score</th>
+      <th>Neutral Score</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>@BBC</td>
+      <td>0.000</td>
+      <td>Lucy and Lee are back! 🙌🎉\n\n#NotGoingOut | 9p...</td>
+      <td>0.0000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>Thu Mar 08 20:03:04 +0000 2018</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>@BBC</td>
+      <td>0.000</td>
+      <td>What advice would YOU give your younger self? ...</td>
+      <td>0.0000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>Thu Mar 08 18:00:06 +0000 2018</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>@BBC</td>
+      <td>0.159</td>
+      <td>In recognition of International Women’s Day, a...</td>
+      <td>-0.1027</td>
+      <td>0.177</td>
+      <td>0.664</td>
+      <td>Thu Mar 08 17:30:11 +0000 2018</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>@BBC</td>
+      <td>0.000</td>
+      <td>🔬 More than half of the UK can't name a famous...</td>
+      <td>0.0000</td>
+      <td>0.000</td>
+      <td>1.000</td>
+      <td>Thu Mar 08 17:00:09 +0000 2018</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>@BBC</td>
+      <td>0.236</td>
+      <td>✍️🙌 Lotte Reiniger is the unsung heroine of ea...</td>
+      <td>0.5719</td>
+      <td>0.000</td>
+      <td>0.764</td>
+      <td>Thu Mar 08 16:30:05 +0000 2018</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
 ```python
