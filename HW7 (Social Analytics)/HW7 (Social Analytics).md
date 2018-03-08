@@ -2,7 +2,7 @@
 # Analysis
 1. As of March 8th, 2018, CBS is by far the most "positive" new source, followed by BBC. There's then a large drop-off in compound sentiment score to NY Times, while Fox News and CNN follow with negative scores.
 2. A large portion of each outlet's tweets are "neutral". This suggests that certain tweets fall on extreme ends of the polarity spectrum and skew the overall compound score for each outlet.
-3. No two outlets have very similar sentiment scores. CBS has about twice as high of a compound score as BBC, who in turn has about 15 times as high of a score as NYT, while CNN is relatively negative, and Fox even moreso.
+3. No two outlets have very similar sentiment scores. CBS has about twice as high of a compound score as BBC, who in turn has about 15 times as high of a score as NYT, while Fox is relatively negative, and CNN even moreso (as of 3/8/2018 14:16).
 
 
 ```python
