@@ -142,15 +142,15 @@ SELECT
     customer.last_name, 
     customer.customer_id, 
     SUM(payment.amount) AS Total_Paid
-FROM 
+FROM
 	customer
-INNER JOIN 
+INNER JOIN
 	payment
-ON 
+ON
 	customer.customer_id = payment.customer_id
-GROUP BY 
+GROUP BY
 	customer.customer_id
-ORDER BY 
+ORDER BY
 	customer.last_name
 ;
 
@@ -299,6 +299,7 @@ INNER JOIN payment
 ON payment.rental_id = rental.rental_id
 GROUP BY category.name
 ORDER BY Gross_Revenue DESC
+LIMIT 5
 ;
 
 -- 8b. How would you display the view that you created in 8a?
