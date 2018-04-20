@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body background:"url(jonathan-bowers-531776-unsplash.jpg)">
+<body>
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="container-fluid">
@@ -23,8 +23,10 @@
         <div class="row mars-news">
           <div class="col-md-8">
             <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Latest Mars News</h3>
+              </div>
               <div class="panel-body">
-                <h3>Latest Mars News</h3>
                 <h4>{{ mars_data.latest_news_title }}</h4>
                 <p>{{ mars_data.latest_news_article_p }}</p>
               </div>
@@ -32,8 +34,10 @@
           </div>
           <div class="col-md-2 col-md-offset-2 weather-report" style="">
             <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Mars Weather Report</h3>
+              </div>
               <div class="panel-body">
-                <h4>Mars Weather Report</h4>
                 <p>{{ mars_data.weather_tweet }}</p>
               </div>
             </div>
@@ -42,16 +46,20 @@
         <div class="row">
           <div class="col-md-8">
             <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Featured Mars Image</h3>
+              </div>
               <div class="panel-body">
-                <h1>Featured Mars Image</h1>
                 <img src={{ mars_data.featured_img }} class="img-responsive">
               </div>
             </div>
           </div>
           <div class="col-md-2 col-md-offset-2">
             <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Mars Facts</h3>
+              </div>
               <div class="panel-body">
-                <h5>Mars Facts</h5>
                   {% autoescape false %}
                   {{ mars_data.html_table }}
                   {% endautoescape %}
@@ -62,12 +70,10 @@
         <br>
         <br>
         <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <h1>Mars Hemispheres</h1>
-              </div>
+          <div class="panel-heading">
+              <h1 class="panel-title">Mars Hemispheres Pictures</h1>
             </div>
+          <div class="panel-body">
             <div class="row">
               <div class="col-md-6" style="padding-right: 0px;">
                 <h3 style="text-align: center">{{ mars_data.hemisphere_imgs[0]['title'] }}</h3>
